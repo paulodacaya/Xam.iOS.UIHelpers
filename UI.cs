@@ -11,7 +11,8 @@ namespace Xam.iOS.UIHelpers
         /// <summary>
         /// Create a UILabel.
         /// </summary>
-        public static UILabel CreateLabel(string text, UIColor textColor, UIFont font, int lines = 0, UITextAlignment textAlignment = UITextAlignment.Left )
+        public static UILabel CreateLabel(string text, UIColor textColor, UIFont font, int lines = 0,
+            UITextAlignment textAlignment = UITextAlignment.Left )
         {
             return new UILabel {
                 Text = text,
@@ -25,7 +26,10 @@ namespace Xam.iOS.UIHelpers
         /// <summary>
         /// Create an attributed UILabel.
         /// </summary>
-        public static UILabel CreateAttrLabel(string text, UIColor textColor, UIFont font, int lines = 0, UITextAlignment textAlignment = UITextAlignment.Left, UIColor backgroundColor = null, UIColor strokeColor = null, float lineSpacing = 0, float kerning = 0, NSUnderlineStyle underlineStyle = NSUnderlineStyle.None, NSShadow shadow = null, float strokeWidth = 0, NSUnderlineStyle strikeThroughStyle = NSUnderlineStyle.None)
+        public static UILabel CreateAttrLabel(string text, UIColor textColor, UIFont font, int lines = 0,
+            UITextAlignment textAlignment = UITextAlignment.Left, UIColor backgroundColor = null, UIColor strokeColor = null,
+            float lineSpacing = 0, float kerning = 0, NSUnderlineStyle underlineStyle = NSUnderlineStyle.None,
+            NSShadow shadow = null, float strokeWidth = 0, NSUnderlineStyle strikeThroughStyle = NSUnderlineStyle.None)
         {
             return new UILabel {
                 Lines = lines,
@@ -52,7 +56,8 @@ namespace Xam.iOS.UIHelpers
         /// <summary>
         /// Create a UIImageView.
         /// </summary>
-        public static UIImageView CreateImageView(UIImage image, UIColor tintColor, UIViewContentMode contentMode = UIViewContentMode.ScaleAspectFit)
+        public static UIImageView CreateImageView(UIImage image, UIColor tintColor,
+            UIViewContentMode contentMode = UIViewContentMode.ScaleAspectFit)
         {
             return new UIImageView {
                 Image = image,
@@ -64,7 +69,8 @@ namespace Xam.iOS.UIHelpers
         /// <summary>
         /// Create a UIButton with text.
         /// </summary>
-        public static UIButton UIButton(string title, UIColor titleColor, UIFont font, UIEdgeInsets padding = default, EventHandler touchUpInside = null)
+        public static UIButton UIButton(string title, UIColor titleColor, UIFont font,
+            UIEdgeInsets padding = default, EventHandler touchUpInside = null)
         {
             var button = new UIButton(UIButtonType.System);
             button.SetTitle(title, UIControlState.Normal);
@@ -81,7 +87,8 @@ namespace Xam.iOS.UIHelpers
         /// <summary>
         /// Create a UIButton with an image.
         /// </summary>
-        public static UIButton UIButton(UIImage image, UIColor tintColor, UIEdgeInsets contentPadding = default, EventHandler touchUpInside = null)
+        public static UIButton UIButton(UIImage image, UIColor tintColor,
+            UIEdgeInsets contentPadding = default, EventHandler touchUpInside = null)
         {
             var button = new UIButton(UIButtonType.System);
             button.SetImage(image, UIControlState.Normal);
@@ -100,7 +107,8 @@ namespace Xam.iOS.UIHelpers
         /// <summary>
         /// Create a UIButton with an image and text.
         /// </summary>
-        public static UIButton UIButton(UIImage image, string title, UIColor tintColor, UIColor titleColor, UIFont font, UIEdgeInsets contentPadding = default, float imageTitleSpacing = 2, EventHandler touchUpInside = null)
+        public static UIButton UIButton(UIImage image, string title, UIColor tintColor, UIColor titleColor,
+            UIFont font, UIEdgeInsets contentPadding = default, float imageTitleSpacing = 2, EventHandler touchUpInside = null)
         {
             var button = new UIButton(UIButtonType.System);
             button.SetImage(image, UIControlState.Normal);
