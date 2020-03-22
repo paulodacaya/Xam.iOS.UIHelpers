@@ -164,7 +164,7 @@ namespace Xam.iOS.UIHelpers
         /// </summary>
         public static UIStackView WithSpacing(this UIStackView stackView, nfloat spacing)
         {
-            stackView.IsNotNull().Spacing = spacing;
+            stackView.Spacing = spacing;
             return stackView;
         }
 
@@ -173,7 +173,7 @@ namespace Xam.iOS.UIHelpers
         /// </summary>
         public static UIStackView WithAlignment(this UIStackView stackView, UIStackViewAlignment alignment)
         {
-            stackView.IsNotNull().Alignment = alignment;
+            stackView.Alignment = alignment;
             return stackView;
         }
 
@@ -182,7 +182,7 @@ namespace Xam.iOS.UIHelpers
         /// </summary>
         public static UIStackView WithDistribution(this UIStackView stackView, UIStackViewDistribution distribution)
         {
-            stackView.IsNotNull().Distribution = distribution;
+            stackView.Distribution = distribution;
             return stackView;
         }
 
@@ -191,7 +191,7 @@ namespace Xam.iOS.UIHelpers
         /// </summary>
         public static UIStackView WithPadding(this UIStackView stackView, UIEdgeInsets edgeInsets)
         {
-            stackView.IsNotNull().LayoutMarginsRelativeArrangement = true;
+            stackView.LayoutMarginsRelativeArrangement = true;
             stackView.LayoutMargins = edgeInsets;
             return stackView;
         }
@@ -201,7 +201,7 @@ namespace Xam.iOS.UIHelpers
         /// </summary>
         public static UIStackView WithPaddingLeft(this UIStackView stackView, nfloat padding)
         {
-            stackView.IsNotNull().LayoutMarginsRelativeArrangement = true;
+            stackView.LayoutMarginsRelativeArrangement = true;
             var layoutMargins = stackView.LayoutMargins;
             layoutMargins.Left = padding;
             stackView.LayoutMargins = layoutMargins;
@@ -213,7 +213,7 @@ namespace Xam.iOS.UIHelpers
         /// </summary>
         public static UIStackView WithPaddingTop(this UIStackView stackView, nfloat padding)
         {
-            stackView.IsNotNull().LayoutMarginsRelativeArrangement = true;
+            stackView.LayoutMarginsRelativeArrangement = true;
             var layoutMargins = stackView.LayoutMargins;
             layoutMargins.Top = padding;
             stackView.LayoutMargins = layoutMargins;
@@ -225,7 +225,7 @@ namespace Xam.iOS.UIHelpers
         /// </summary>
         public static UIStackView WithPaddingRight(this UIStackView stackView, nfloat padding)
         {
-            stackView.IsNotNull().LayoutMarginsRelativeArrangement = true;
+            stackView.LayoutMarginsRelativeArrangement = true;
             var layoutMargins = stackView.LayoutMargins;
             layoutMargins.Right = padding;
             stackView.LayoutMargins = layoutMargins;
@@ -237,7 +237,7 @@ namespace Xam.iOS.UIHelpers
         /// </summary>
         public static UIStackView WithPaddingBottom(this UIStackView stackView, nfloat padding)
         {
-            stackView.IsNotNull().LayoutMarginsRelativeArrangement = true;
+            stackView.LayoutMarginsRelativeArrangement = true;
             var layoutMargins = stackView.LayoutMargins;
             layoutMargins.Right = padding;
             stackView.LayoutMargins = layoutMargins;
@@ -249,7 +249,7 @@ namespace Xam.iOS.UIHelpers
         /// </summary>
         public static UIStackView WithCustomSpacing(this UIStackView stackView, nfloat spacing, UIView afterView)
         {
-            stackView.IsNotNull().SetCustomSpacing(spacing, afterView);
+            stackView.SetCustomSpacing(spacing, afterView);
             return stackView;
         }
 
@@ -266,13 +266,6 @@ namespace Xam.iOS.UIHelpers
             return new UIStackView(views) {
                 Axis = axis
             };
-        }
-
-        private static T IsNotNull<T>(this T value)
-        {
-            if (value == null)
-                throw new NullReferenceException($"{nameof(value)} is null.");
-            return value;
         }
 
         #endregion
