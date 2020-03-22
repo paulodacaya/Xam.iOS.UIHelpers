@@ -13,6 +13,24 @@
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>Xam.iOS.UIHelpers</AssemblyName>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    <PackageId>Xamarin.iOS.UIHelpers</PackageId>
+    <PackageVersion>0.1.0-preview</PackageVersion>
+    <Authors>Paulo Dacaya</Authors>
+    <Copyright>PDCo.</Copyright>
+    <NeutralLanguage>en-AU</NeutralLanguage>
+    <PackageLicenseUrl>https://github.com/paulodacaya/Xam.iOS.UIHelpers/blob/master/LICENSE</PackageLicenseUrl>
+    <Owners>Paulo Dacaya</Owners>
+    <PackageProjectUrl>https://github.com/paulodacaya/Xam.iOS.UIHelpers</PackageProjectUrl>
+    <PackageReleaseNotes>StackViewHelpers: Easy way to layout view using UIStackView.
+ConstraintHelpers: Easy way to layout view using Auto Layout.
+UIHelpers: Create UI labels, image views and buttons in one line.
+UIExtensions: Extensions helpers on UIKit classes.</PackageReleaseNotes>
+    <Summary>Build your Xamarin.iOS UI the easy and clean way in C#.</Summary>
+    <PackageTags>Xamarin.iOS</PackageTags>
+    <Title>Xamarin.iOS.UIHelpers</Title>
+    <Description>Build your Xamarin.iOS UI the easy and clean way in C#.</Description>
+    <SynchReleaseVersion>false</SynchReleaseVersion>
+    <PackOnBuild>true</PackOnBuild>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
