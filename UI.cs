@@ -69,7 +69,7 @@ namespace Xam.iOS.UIHelpers
         /// <summary>
         /// Create a UIButton with text.
         /// </summary>
-        public static UIButton UIButton(string title, UIColor titleColor, UIFont font,
+        public static UIButton CreateButton(string title, UIColor titleColor, UIFont font,
             UIEdgeInsets padding = default, EventHandler touchUpInside = null)
         {
             var button = new UIButton(UIButtonType.System);
@@ -87,7 +87,7 @@ namespace Xam.iOS.UIHelpers
         /// <summary>
         /// Create a UIButton with an image.
         /// </summary>
-        public static UIButton UIButton(UIImage image, UIColor tintColor,
+        public static UIButton CreateButton(UIImage image, UIColor tintColor,
             UIEdgeInsets contentPadding = default, EventHandler touchUpInside = null)
         {
             var button = new UIButton(UIButtonType.System);
@@ -107,7 +107,7 @@ namespace Xam.iOS.UIHelpers
         /// <summary>
         /// Create a UIButton with an image and text.
         /// </summary>
-        public static UIButton UIButton(UIImage image, string title, UIColor tintColor, UIColor titleColor,
+        public static UIButton CreateButton(UIImage image, string title, UIColor tintColor, UIColor titleColor,
             UIFont font, UIEdgeInsets contentPadding = default, float imageTitleSpacing = 2, EventHandler touchUpInside = null)
         {
             var button = new UIButton(UIButtonType.System);
