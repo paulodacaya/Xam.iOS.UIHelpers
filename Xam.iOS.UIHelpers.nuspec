@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>PDCo.Xamarin.iOS.UIHelpers</id>
+    <version>0.1.0-alpha</version>
+    <title>Xamarin.iOS.UIHelpers</title>
+    <authors>Paulo Dacaya</authors>
+    <owners>Paulo Dacaya</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/paulodacaya/Xam.iOS.UIHelpers</projectUrl>
+    <description>Build your Xamarin.iOS UI the easy and clean way in C#.</description>
+    <releaseNotes>StackViewHelpers: Easy way to layout view using UIStackView.
+ConstraintHelpers: Easy way to layout view using Auto Layout.
+UIHelpers: Create UI labels, image views and buttons in one line.
+UIExtensions: Extensions helpers on UIKit classes.</releaseNotes>
+    <copyright>Copyright 2020</copyright>
+    <tags>Xamarin.iOS</tags>
+    <dependencies>
+      <group targetFramework="Xamarin.iOS010">
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src=".\bin\Release\Xam.iOS.UIHelpers.dll" target="lib\Xamarin.iOS010\Xam.iOS.UIHelpers.dll" />
+  </files>
+</package>
