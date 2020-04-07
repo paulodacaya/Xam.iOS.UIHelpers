@@ -162,7 +162,7 @@ namespace Xam.iOS.UIHelpers
         /// <summary>
         /// Set spacing between elements UIStackView.
         /// </summary>
-        public static UIStackView WithSpacing(this UIStackView stackView, nfloat spacing)
+        public static UIStackView Spacing(this UIStackView stackView, nfloat spacing)
         {
             stackView.Spacing = spacing;
             return stackView;
@@ -171,7 +171,7 @@ namespace Xam.iOS.UIHelpers
         /// <summary>
         /// Set alignment of UIStackView.
         /// </summary>
-        public static UIStackView WithAlignment(this UIStackView stackView, UIStackViewAlignment alignment)
+        public static UIStackView Alignment(this UIStackView stackView, UIStackViewAlignment alignment)
         {
             stackView.Alignment = alignment;
             return stackView;
@@ -180,7 +180,7 @@ namespace Xam.iOS.UIHelpers
         /// <summary>
         /// Set distribution of UIStackView.
         /// </summary>
-        public static UIStackView WithDistribution(this UIStackView stackView, UIStackViewDistribution distribution)
+        public static UIStackView Distribution(this UIStackView stackView, UIStackViewDistribution distribution)
         {
             stackView.Distribution = distribution;
             return stackView;
@@ -189,7 +189,7 @@ namespace Xam.iOS.UIHelpers
         /// <summary>
         /// Set padding of UIStackView.
         /// </summary>
-        public static UIStackView WithPadding(this UIStackView stackView, UIEdgeInsets edgeInsets)
+        public static UIStackView Padding(this UIStackView stackView, UIEdgeInsets edgeInsets)
         {
             stackView.LayoutMarginsRelativeArrangement = true;
             stackView.LayoutMargins = edgeInsets;
@@ -199,7 +199,7 @@ namespace Xam.iOS.UIHelpers
         /// <summary>
         /// Set left padding of UIStackView.
         /// </summary>
-        public static UIStackView WithPaddingLeft(this UIStackView stackView, nfloat padding)
+        public static UIStackView PaddingLeft(this UIStackView stackView, nfloat padding)
         {
             stackView.LayoutMarginsRelativeArrangement = true;
             var layoutMargins = stackView.LayoutMargins;
@@ -211,7 +211,7 @@ namespace Xam.iOS.UIHelpers
         /// <summary>
         /// Set top padding of UIStackView.
         /// </summary>
-        public static UIStackView WithPaddingTop(this UIStackView stackView, nfloat padding)
+        public static UIStackView PaddingTop(this UIStackView stackView, nfloat padding)
         {
             stackView.LayoutMarginsRelativeArrangement = true;
             var layoutMargins = stackView.LayoutMargins;
@@ -223,7 +223,7 @@ namespace Xam.iOS.UIHelpers
         /// <summary>
         /// Set right padding of UIStackView.
         /// </summary>
-        public static UIStackView WithPaddingRight(this UIStackView stackView, nfloat padding)
+        public static UIStackView PaddingRight(this UIStackView stackView, nfloat padding)
         {
             stackView.LayoutMarginsRelativeArrangement = true;
             var layoutMargins = stackView.LayoutMargins;
@@ -235,7 +235,7 @@ namespace Xam.iOS.UIHelpers
         /// <summary>
         /// Set bottom padding of UIStackView.
         /// </summary>
-        public static UIStackView WithPaddingBottom(this UIStackView stackView, nfloat padding)
+        public static UIStackView PaddingBottom(this UIStackView stackView, nfloat padding)
         {
             stackView.LayoutMarginsRelativeArrangement = true;
             var layoutMargins = stackView.LayoutMargins;
@@ -247,7 +247,7 @@ namespace Xam.iOS.UIHelpers
         /// <summary>
         /// Set custom spacing after an arranged subview of UIStackView.
         /// </summary>
-        public static UIStackView WithCustomSpacing(this UIStackView stackView, nfloat spacing, UIView afterView)
+        public static UIStackView CustomSpacing(this UIStackView stackView, nfloat spacing, UIView afterView)
         {
             stackView.SetCustomSpacing(spacing, afterView);
             return stackView;
@@ -256,9 +256,9 @@ namespace Xam.iOS.UIHelpers
         /// <summary>
         /// Set custom spacing after an arranged subview of UIStackView.
         /// </summary>
-        public static UIStackView WithCustomSpacing(this UIStackView stackView, nfloat spacing, int afterIndex)
+        public static UIStackView CustomSpacing(this UIStackView stackView, nfloat spacing, int afterIndex)
         {
-            return stackView.WithCustomSpacing(spacing, stackView.ArrangedSubviews[afterIndex]);
+            return stackView.CustomSpacing(spacing, stackView.ArrangedSubviews[afterIndex]);
         }
 
         private static UIStackView Stack(UILayoutConstraintAxis axis, UIView[] views)
