@@ -8,12 +8,12 @@ Build your `Xamarin.iOS` UI the easy and clean way in **C#**.
 
 Inspired by **LBTA Tools** by [*Brian Voong*](https://github.com/bhlvoong/LBTATools).
 
-Install
-=============================================================
+## Install
+
 Find `Xamarin.iOS.UIHelpers` on **NuGet** package manager.
 
-Usage
-=============================================================
+## Usage
+
 ### 1. Stacking with UIStackView
 
 ***Basic Example***
@@ -91,6 +91,6 @@ view.AddSubview(someView)
 someView.AnchorFill();
 ```
 
-License
-=======
+## License
+
 Xam.iOS.UIHelpers is available under the MIT license.
