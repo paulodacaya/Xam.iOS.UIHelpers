@@ -102,7 +102,7 @@ namespace Xam.iOS.UIHelpers
         }
 
         /// <summary>
-        /// Center in superview by constraining centerX and centerY to superview.
+        /// Center in superview by constraining centerX and centerY to superview, respectively.
         /// </summary>
         public static UIView AnchorCenter(this UIView view, UIOffset offset = default, CGSize size = default)
         {
