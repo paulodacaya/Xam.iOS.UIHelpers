@@ -12,7 +12,7 @@ namespace Xam.iOS.UIHelpers
         /// Create a UILabel.
         /// </summary>
         public static UILabel CreateLabel(string text, UIColor textColor, UIFont font, int lines = 0,
-            UITextAlignment textAlignment = UITextAlignment.Left )
+            UITextAlignment textAlignment = UITextAlignment.Left)
         {
             return new UILabel {
                 Text = text,
