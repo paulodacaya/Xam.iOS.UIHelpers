@@ -15,7 +15,7 @@ ConstraintHelpers: Easy way to layout view using Auto Layout.
 UIHelpers: Create UI labels, image views and buttons in one line.
 UIExtensions: Extensions helpers on UIKit classes.</releaseNotes>
     <copyright>Copyright 2020</copyright>
-    <tags>Xamarin.iOS</tags>
+    <tags>Xamarin.iOS Helpers</tags>
     <dependencies>
       <group targetFramework="Xamarin.iOS010">
       </group>
