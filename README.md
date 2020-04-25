@@ -10,7 +10,7 @@ Inspired by **LBTA Tools** by [*Brian Voong*](https://github.com/bhlvoong/LBTATo
 
 ## Install
 
-Find `Xamarin.iOS.UIHelpers` on **NuGet** package manager.
+Find `PDCo.Xamarin.iOS.UIHelpers` on **NuGet** package manager.
 
 ## Usage
 
