@@ -5,12 +5,22 @@ namespace Xam.iOS.UIHelpers
     public static class UIViewControllerExtensions
     {
         /// <summary>
-        /// Add child view controller to parent.
+        /// Add child view controller to parent controller's view.
         /// </summary>
         public static void AddChild(this UIViewController that, UIViewController viewController)
         {
+            that.AddChild(viewController, null);
+        }
+
+        /// <summary>
+        /// Add child view controller to parent controller. This controller will be the subview of
+        /// provided <b>superView</b>. If <b>superView</b> is null, it will default to parent controller's view.
+        /// </summary>
+        public static void AddChild(this UIViewController that, UIViewController viewController, UIView superView)
+        {
+            var view = superView ?? viewController.View;
             that.AddChildViewController(viewController);
-            that.View.AddSubview(viewController.View);
+            that.View.AddSubview(view);
             viewController.DidMoveToParentViewController(that);
         }
 
