@@ -38,7 +38,7 @@ namespace Xam.iOS.UIHelpers
         /// </summary>
         public static UIView ConstraintTrailingEqualTo(this UIView view, NSLayoutXAxisAnchor anchor, nfloat constant = default)
         {
-            view.TrailingAnchor.ConstraintEqualTo(anchor, constant).Active = true;
+            view.TrailingAnchor.ConstraintEqualTo(anchor, -constant).Active = true;
             return view;
         }
 
@@ -47,7 +47,7 @@ namespace Xam.iOS.UIHelpers
         /// </summary>
         public static UIView ConstraintBottomEqualTo(this UIView view, NSLayoutYAxisAnchor anchor, nfloat constant = default)
         {
-            view.BottomAnchor.ConstraintEqualTo(anchor, constant).Active = true;
+            view.BottomAnchor.ConstraintEqualTo(anchor, -constant).Active = true;
             return view;
         }
 
@@ -92,7 +92,7 @@ namespace Xam.iOS.UIHelpers
         /// <summary>
         /// Fill superview by constraining leading, top, trailing and bottom to superview.
         /// </summary>
-        public static UIView AnchorFill(this UIView view, UIEdgeInsets edgeInsets)
+        public static UIView AnchorFill(this UIView view, UIEdgeInsets edgeInsets = default)
         {
             return view.ActivateConstaints()
                 .ConstraintLeadingEqualTo(view.Superview.LeadingAnchor, edgeInsets.Left)
