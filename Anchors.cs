@@ -18,143 +18,132 @@ namespace Xam.iOS.UIHelpers
         /// <summary>
         /// Constraint leading anchor to another anchor.
         /// </summary>
-        public static UIView ConstraintLeadingEqualTo(this UIView view, NSLayoutXAxisAnchor anchor, nfloat constant = default)
+        public static UIView ConstraintLeadingEqualTo(this UIView view, NSLayoutXAxisAnchor anchor, nfloat constant = default, AnchoredConstraints constraints = default)
         {
-            view.LeadingAnchor.ConstraintEqualTo(anchor, constant).Active = true;
+            var leadingConstraint = view.LeadingAnchor.ConstraintEqualTo(anchor, constant);
+            if (constraints != null)
+                constraints.Leading = leadingConstraint;
+            leadingConstraint.Active = true;
             return view;
         }
 
         /// <summary>
         /// Constraint top anchor to another anchor.
         /// </summary>
-        public static UIView ConstraintTopEqualTo(this UIView view, NSLayoutYAxisAnchor anchor, nfloat constant = default)
+        public static UIView ConstraintTopEqualTo(this UIView view, NSLayoutYAxisAnchor anchor, nfloat constant = default, AnchoredConstraints constraints = default)
         {
-            view.TopAnchor.ConstraintEqualTo(anchor, constant).Active = true;
+            var topConstraint = view.TopAnchor.ConstraintEqualTo(anchor, constant);
+            if (constraints != null)
+                constraints.Top = topConstraint;
+            topConstraint.Active = true;
             return view;
         }
 
         /// <summary>
         /// Constraint trailing anchor to another anchor.
         /// </summary>
-        public static UIView ConstraintTrailingEqualTo(this UIView view, NSLayoutXAxisAnchor anchor, nfloat constant = default)
+        public static UIView ConstraintTrailingEqualTo(this UIView view, NSLayoutXAxisAnchor anchor, nfloat constant = default, AnchoredConstraints constraints = default)
         {
-            view.TrailingAnchor.ConstraintEqualTo(anchor, -constant).Active = true;
+            var trailingConstraint = view.TrailingAnchor.ConstraintEqualTo(anchor, -constant);
+            if (constraints != null)
+                constraints.Trailing = trailingConstraint;
+            trailingConstraint.Active = true;
             return view;
         }
 
         /// <summary>
         /// Constraint bottom anchor to another anchor.
         /// </summary>
-        public static UIView ConstraintBottomEqualTo(this UIView view, NSLayoutYAxisAnchor anchor, nfloat constant = default)
+        public static UIView ConstraintBottomEqualTo(this UIView view, NSLayoutYAxisAnchor anchor, nfloat constant = default, AnchoredConstraints constraints = default)
         {
-            view.BottomAnchor.ConstraintEqualTo(anchor, -constant).Active = true;
+            var bottomConstraint = view.BottomAnchor.ConstraintEqualTo(anchor, -constant);
+            if (constraints != null)
+                constraints.Bottom = bottomConstraint;
+            bottomConstraint.Active = true;
             return view;
         }
 
         /// <summary>
         /// Constraint centreX anchor to another anchor.
         /// </summary>
-        public static UIView ConstraintCentreXEqualTo(this UIView view, NSLayoutXAxisAnchor anchor, nfloat constant = default)
+        public static UIView ConstraintCentreXEqualTo(this UIView view, NSLayoutXAxisAnchor anchor, nfloat constant = default, AnchoredConstraints constraints = default)
         {
-            view.CenterXAnchor.ConstraintEqualTo(anchor, constant).Active = true;
+            var centerXConstraint = view.CenterXAnchor.ConstraintEqualTo(anchor, constant);
+            if (constraints != null)
+                centerXConstraint.Active = true;
             return view;
         }
 
         /// <summary>
         /// Constraint centreY anchor to another anchor.
         /// </summary>
-        public static UIView ConstraintCentreYEqualTo(this UIView view, NSLayoutYAxisAnchor anchor, nfloat constant = default)
+        public static UIView ConstraintCentreYEqualTo(this UIView view, NSLayoutYAxisAnchor anchor, nfloat constant = default, AnchoredConstraints constraints = default)
         {
-            view.CenterYAnchor.ConstraintEqualTo(anchor, constant).Active = true;
+            var centerYConstraint = view.CenterYAnchor.ConstraintEqualTo(anchor, constant);
+            if (constraints != null)
+                constraints.CenterY = centerYConstraint;
+            centerYConstraint.Active = true;
             return view;
         }
 
         /// <summary>
         /// Constraint height anchor to a constant.
         /// </summary>
-        public static UIView ConstraintWidthEqualTo(this UIView view, nfloat constant)
+        public static UIView ConstraintWidthEqualTo(this UIView view, nfloat constant, AnchoredConstraints constraints = default)
         {
-            if( constant > 0 )
-                view.WidthAnchor.ConstraintEqualTo(constant).Active = true;
+            if ( constant > 0 )
+            {
+                var widthConstraint = view.WidthAnchor.ConstraintEqualTo(constant);
+                if (constraints != null)
+                    constraints.Width = widthConstraint;
+                widthConstraint.Active = true;
+            }
             return view;
         }
 
         /// <summary>
         /// Constraint width anchor to a constant.
         /// </summary>
-        public static UIView ConstraintHeightEqualTo(this UIView view, nfloat constant)
+        public static UIView ConstraintHeightEqualTo(this UIView view, nfloat constant, AnchoredConstraints constraints = default)
         {
             if (constant > 0)
-                view.HeightAnchor.ConstraintEqualTo(constant).Active = true;
+            {
+                var heightConstraint = view.HeightAnchor.ConstraintEqualTo(constant);
+                if (constraints != null)
+                    constraints.Height = heightConstraint;
+                heightConstraint.Active = true;
+            }
             return view;
         }
 
         /// <summary>
         /// Fill superview by constraining leading, top, trailing and bottom to superview.
         /// </summary>
-        public static UIView AnchorFill(this UIView view, UIEdgeInsets edgeInsets = default)
+        public static UIView AnchorFill(this UIView view, UIEdgeInsets edgeInsets = default, AnchoredConstraints constraints = default)
         {
             return view.ActivateConstaints()
-                .ConstraintLeadingEqualTo(view.Superview.LeadingAnchor, edgeInsets.Left)
-                .ConstraintTopEqualTo(view.Superview.TopAnchor, edgeInsets.Top)
-                .ConstraintTrailingEqualTo(view.Superview.TrailingAnchor, -edgeInsets.Right)
-                .ConstraintBottomEqualTo(view.Superview.BottomAnchor, -edgeInsets.Bottom);
+                .ConstraintLeadingEqualTo(view.Superview.LeadingAnchor, edgeInsets.Left, constraints)
+                .ConstraintTopEqualTo(view.Superview.TopAnchor, edgeInsets.Top, constraints)
+                .ConstraintTrailingEqualTo(view.Superview.TrailingAnchor, -edgeInsets.Right, constraints)
+                .ConstraintBottomEqualTo(view.Superview.BottomAnchor, -edgeInsets.Bottom, constraints);
         }
 
         /// <summary>
         /// Center in superview by constraining centerX and centerY to superview, respectively.
         /// </summary>
-        public static UIView AnchorCenter(this UIView view, UIOffset offset = default, CGSize size = default)
+        public static UIView AnchorCenter(this UIView view, UIOffset offset = default, CGSize size = default, AnchoredConstraints constraints = default)
         {
             return view.ActivateConstaints()
-                .ConstraintCentreXEqualTo(view.Superview.CenterXAnchor, offset.Horizontal)
-                .ConstraintCentreYEqualTo(view.Superview.CenterYAnchor, offset.Vertical)
-                .ConstraintWidthEqualTo(size.Width)
-                .ConstraintHeightEqualTo(size.Height);
-        }
-
-        /// <summary>
-        /// Get constraints applied to view.
-        /// </summary>
-        public static AnchoredConstraints CaptureAnchoredConstraints(this UIView view)
-        {
-            var constraints = new AnchoredConstraints();
-
-            foreach(var constraint in view.Constraints)
-            {
-                switch(constraint.FirstAttribute)
-                {
-                    case NSLayoutAttribute.Leading:
-                        constraints.Leading = constraint;
-                        break;
-                    case NSLayoutAttribute.Top:
-                        constraints.Top = constraint;
-                        break;
-                    case NSLayoutAttribute.Trailing:
-                        constraints.Trailing = constraint;
-                        break;
-                    case NSLayoutAttribute.Bottom:
-                        constraints.Bottom = constraint;
-                        break;
-                    case NSLayoutAttribute.CenterX:
-                        constraints.CenterX = constraint;
-                        break;
-                    case NSLayoutAttribute.CenterY:
-                        constraints.CenterY = constraint;
-                        break;
-                    case NSLayoutAttribute.Width:
-                        constraints.Width = constraint;
-                        break;
-                    case NSLayoutAttribute.Height:
-                        constraints.Height = constraint;
-                        break;
-                }
-            }
-
-            return constraints;
+                .ConstraintCentreXEqualTo(view.Superview.CenterXAnchor, offset.Horizontal, constraints)
+                .ConstraintCentreYEqualTo(view.Superview.CenterYAnchor, offset.Vertical, constraints)
+                .ConstraintWidthEqualTo(size.Width, constraints)
+                .ConstraintHeightEqualTo(size.Height, constraints);
         }
     }
 
+    /// <summary>
+    /// An object that captures applied anchored constraints.
+    /// </summary>
     public class AnchoredConstraints
     {
         public NSLayoutConstraint Top { get; internal set; }
@@ -166,7 +155,7 @@ namespace Xam.iOS.UIHelpers
         public NSLayoutConstraint Width { get; internal set; }
         public NSLayoutConstraint Height { get; internal set; }
 
-        internal AnchoredConstraints()
+        public AnchoredConstraints()
         {
         }
     }
