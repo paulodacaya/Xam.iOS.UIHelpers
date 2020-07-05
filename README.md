@@ -14,19 +14,6 @@ Find `PDCo.Xamarin.iOS.UIHelpers` on **NuGet** package manager.
 
 ## Usage
 
------
-
-### **On this page:**
-
-* [Stacking with UIStackView](#1.-stacking-with-uistackview)
-* [Auto Layout](#2.-auto-layout)
-* [Creating UI Elements](#3.-creating-ui-elements)
-* [Left Justify Cells in a UICollectionView](#4.-left-justify-cells-in-a-uicollectionview)
-
-
------
-
-
 ### 1. Stacking with UIStackView
 
 ***Basic Example***
