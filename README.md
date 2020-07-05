@@ -49,7 +49,7 @@ var outerStackView = new UIStackView(new[] {ImageView, innerStackView})
    Axis = UILayoutConstraintAxis.Horizontal,
    Alignment = UIStackViewAlignment.Center,
    Spacing = 6
-}
+};
 ```
 
 ```c#
