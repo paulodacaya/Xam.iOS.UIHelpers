@@ -62,7 +62,7 @@ var stackView = UI.HStack(
        SubTitleLabel
    ).Spacing(3)
 ).Alignment(UIStackViewAlignment.Center)
- .Spacing(6)
+ .Spacing(6);
 ```
 
 ### 2. Auto Layout
@@ -80,16 +80,58 @@ someView.TranslatesAutoresizingMaskIntoConstraints = false;
 someView.LeadingAnchor.ConstraintEqualTo(view.LeadingAnchor).Active = true;
 someView.TopAnchor.ConstraintEqualTo(view.TopAnchor).Active = true;
 someView.TrailingAnchor.ConstraintEqualTo(view.TrailingAnchor).Active = true;
-someView.BottomAnchor.ConstraintEqualTo(view.BottomAnchor)./Active = true;
+someView.BottomAnchor.ConstraintEqualTo(view.BottomAnchor).Active = true;
 ```
 
 ```c#
 // UIHelpers way...
 
-view.AddSubview(someView)
+view.AddSubview(someView);
 
 someView.AnchorFill();
+
+// If you need a referenced to the constraints applied...
+
+var anchoredConstraints = new AnchoredConstraints();
+
+view.AddSubview(someView);
+
+someView.AnchorFill(constraints: anchoredConstraints);
 ```
+
+### 3. Creating UI Elements
+
+Reduce the number of lines when creating UI elements.
+
+```c#
+// Traditional way...
+
+var titleLabel = new UILabel {
+   Text = "SomeText",
+   TextColor = UIColor.Black,
+   TextAlignment = UITextAlignment.Left,
+   Font = UIFont.SystemFontOfSize(12),
+   Lines = 0
+};
+```
+
+```c#
+// UIHelpers way...
+
+var titleLabel = UICreateLabel("SomeText", UIColor.Black, UIFont.SystemFontOfSize(12));
+```
+
+### 4. Left Justify Cells in a UICollectionView
+
+Works for self-sizing and fixed cells.  
+See full working code in *Examples* folder.
+
+```c#
+var flowLayout = new LeftAlignCollectionViewFlowLayout();
+var collectionViewController = new UICollectionViewController(flowLayout);
+```
+
+// TODO image
 
 ## License
 
