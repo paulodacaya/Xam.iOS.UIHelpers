@@ -50,8 +50,5 @@
     <Compile Include="Extensions.cs" />
     <Compile Include="LeftAlignCollectionViewFlowLayout.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon.png" Pack="true" PackagePath="\" />
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
