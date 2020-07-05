@@ -89,7 +89,9 @@ someView.BottomAnchor.ConstraintEqualTo(view.BottomAnchor).Active = true;
 view.AddSubview(someView);
 
 someView.AnchorFill();
+```
 
+```c#
 // If you need a referenced to the constraints applied...
 
 var anchoredConstraints = new AnchoredConstraints();
@@ -131,7 +133,7 @@ var flowLayout = new LeftAlignCollectionViewFlowLayout();
 var collectionViewController = new UICollectionViewController(flowLayout);
 ```
 
-// TODO image
+![Left Justified Cells in UICollectionView](Images/LeftAlignCollectionViewFlowLayout_Image_1.png)
 
 ## License
 
