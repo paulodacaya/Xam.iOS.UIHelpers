@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>PDCo.Xamarin.iOS.UIHelpers</id>
-    <version>0.2.0-beta</version>
+    <version>0.2.2-beta</version>
     <title>Xamarin.iOS.UIHelpers</title>
     <authors>Paulo Dacaya</authors>
     <owners>Paulo Dacaya</owners>
@@ -10,7 +10,7 @@
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/paulodacaya/Xam.iOS.UIHelpers</projectUrl>
     <description>Build your Xamarin.iOS UI the easy and clean way in C#.</description>
-    <releaseNotes>Added improvements and the ability to left justify cells in a UICollectionView.</releaseNotes>
+    <releaseNotes>Minor bug fixes.</releaseNotes>
     <copyright>Copyright 2020</copyright>
     <tags>Xamarin.iOS Helpers</tags>
     <dependencies>
