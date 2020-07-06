@@ -70,7 +70,8 @@ namespace Xam.iOS.UIHelpers
         {
             var centerXConstraint = view.CenterXAnchor.ConstraintEqualTo(anchor, constant);
             if (constraints != null)
-                centerXConstraint.Active = true;
+                constraints.CenterX = centerXConstraint;
+            centerXConstraint.Active = true;
             return view;
         }
 
@@ -124,8 +125,8 @@ namespace Xam.iOS.UIHelpers
             return view.ActivateConstaints()
                 .ConstraintLeadingEqualTo(view.Superview.LeadingAnchor, edgeInsets.Left, constraints)
                 .ConstraintTopEqualTo(view.Superview.TopAnchor, edgeInsets.Top, constraints)
-                .ConstraintTrailingEqualTo(view.Superview.TrailingAnchor, -edgeInsets.Right, constraints)
-                .ConstraintBottomEqualTo(view.Superview.BottomAnchor, -edgeInsets.Bottom, constraints);
+                .ConstraintTrailingEqualTo(view.Superview.TrailingAnchor, edgeInsets.Right, constraints)
+                .ConstraintBottomEqualTo(view.Superview.BottomAnchor, edgeInsets.Bottom, constraints);
         }
 
         /// <summary>
