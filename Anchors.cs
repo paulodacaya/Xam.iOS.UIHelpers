@@ -16,7 +16,7 @@ namespace Xam.iOS.UIHelpers
         }
 
         /// <summary>
-        /// Constraint leading anchor to another anchor.
+        /// Constraint leading anchor to an anchor.
         /// </summary>
         public static T ConstraintLeadingEqualTo<T>(this T view, NSLayoutXAxisAnchor anchor, nfloat constant = default, LayoutConstraints constraints = default) where T: UIView
         {
@@ -28,7 +28,7 @@ namespace Xam.iOS.UIHelpers
         }
 
         /// <summary>
-        /// Constraint top anchor to another anchor.
+        /// Constraint top anchor to an anchor.
         /// </summary>
         public static T ConstraintTopEqualTo<T>(this T view, NSLayoutYAxisAnchor anchor, nfloat constant = default, LayoutConstraints constraints = default) where T: UIView
         {
@@ -40,7 +40,7 @@ namespace Xam.iOS.UIHelpers
         }
 
         /// <summary>
-        /// Constraint trailing anchor to another anchor.
+        /// Constraint trailing anchor to an anchor.
         /// </summary>
         public static T ConstraintTrailingEqualTo<T>(this T view, NSLayoutXAxisAnchor anchor, nfloat constant = default, LayoutConstraints constraints = default) where T: UIView
         {
@@ -52,7 +52,7 @@ namespace Xam.iOS.UIHelpers
         }
 
         /// <summary>
-        /// Constraint bottom anchor to another anchor.
+        /// Constraint bottom anchor to an anchor.
         /// </summary>
         public static T ConstraintBottomEqualTo<T>(this T view, NSLayoutYAxisAnchor anchor, nfloat constant = default, LayoutConstraints constraints = default) where T: UIView
         {
@@ -64,7 +64,7 @@ namespace Xam.iOS.UIHelpers
         }
 
         /// <summary>
-        /// Constraint centreX anchor to another anchor.
+        /// Constraint centreX anchor to an anchor.
         /// </summary>
         public static T ConstraintCentreXEqualTo<T>(this T view, NSLayoutXAxisAnchor anchor, nfloat constant = default, LayoutConstraints constraints = default) where T: UIView
         {
@@ -76,7 +76,7 @@ namespace Xam.iOS.UIHelpers
         }
 
         /// <summary>
-        /// Constraint centreY anchor to another anchor.
+        /// Constraint centreY anchor to an anchor.
         /// </summary>
         public static T ConstraintCentreYEqualTo<T>(this T view, NSLayoutYAxisAnchor anchor, nfloat constant = default, LayoutConstraints constraints = default) where T: UIView
         {
@@ -88,7 +88,7 @@ namespace Xam.iOS.UIHelpers
         }
 
         /// <summary>
-        /// Constraint height anchor to a constant.
+        /// Constraint width anchor with a constant.
         /// </summary>
         public static T ConstraintWidthEqualTo<T>(this T view, nfloat constant, LayoutConstraints constraints = default) where T: UIView
         {
@@ -100,11 +100,36 @@ namespace Xam.iOS.UIHelpers
         }
 
         /// <summary>
-        /// Constraint width anchor to a constant.
+        /// Constraint width anchor to an anchor.
+        /// </summary>
+        public static T ConstraintWidthEqualTo<T>(this T view, NSLayoutAnchor<NSLayoutDimension> anchor, LayoutConstraints constraints = default) where T : UIView
+        {
+            var widthConstraint = view.WidthAnchor.ConstraintEqualTo(anchor);
+            var test = new UIView();
+            if (constraints != null)
+                constraints.Width = widthConstraint;
+            widthConstraint.Active = true;
+            return view;
+        }
+
+        /// <summary>
+        /// Constraint height anchor with a constant.
         /// </summary>
         public static T ConstraintHeightEqualTo<T>(this T view, nfloat constant, LayoutConstraints constraints = default) where T: UIView
         {
             var heightConstraint = view.HeightAnchor.ConstraintEqualTo(constant);
+            if (constraints != null)
+                constraints.Height = heightConstraint;
+            heightConstraint.Active = true;
+            return view;
+        }
+
+        /// <summary>
+        /// Constraint height anchor to an anchor.
+        /// </summary>
+        public static T ConstraintHeightEqualTo<T>(this T view, NSLayoutAnchor<NSLayoutDimension> anchor, LayoutConstraints constraints = default) where T : UIView
+        {
+            var heightConstraint = view.HeightAnchor.ConstraintEqualTo(anchor);
             if (constraints != null)
                 constraints.Height = heightConstraint;
             heightConstraint.Active = true;
